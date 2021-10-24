@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# mine
+gem "semantic-ui-sass", "~> 2.4"
+# gem 'jquery-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -53,4 +57,13 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+
+group :development do
+  gem "pry-rails"
+  gem "annotate"
+  gem "active_record_doctor"
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
