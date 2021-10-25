@@ -1,1 +1,51 @@
-<h1>Chatroom home</h1>
+<h4 class="ui center aligned medium icon header">
+  <i class="circular coffee orange icon"></i>
+  Say Something
+</h4>
+<div class="ui two column grid">
+  <div class="eleven wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class=" ui feed" id="message-container">
+          <%= render @messages %>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html:{class:"ui reply form",role:"form"},url:message_path) do |f| %>
+          <div class="field">
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Enter message..." %>
+              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="five wide column">
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui vertical menu">
+          <a class="active teal item">
+            Inbox
+            <div class="ui teal left pointing label">1</div>
+          </a>
+          <a class="item">
+            Spam
+            <div class="ui label">51</div>
+          </a>
+          <a class="item">
+            Updates
+            <div class="ui label">1</div>
+          </a>
+          <div class="item">
+            <div class="ui transparent icon input" data-dashlane-rid="d7f78d8e45ab409d" data-form-type="">
+              <input type="text" placeholder="Search mail..." data-dashlane-rid="116b91ec95ce07ef" data-form-type="">
+              <i class="search icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
